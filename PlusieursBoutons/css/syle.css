@@ -1,0 +1,27 @@
+main{
+    max-width: 1000px;
+    margin: auto;
+}
+main>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main>div>article{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border:1px solid #585858;
+    padding: 10px;
+    justify-content: center;
+}
+
+ul>li{
+    display:none;
+}
+.cart:hover ul li{
+    display: block;
+}
+.price{
+    padding-bottom: 10px;
+}
