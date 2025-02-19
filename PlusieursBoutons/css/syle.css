@@ -2,7 +2,7 @@ main{
     max-width: 1000px;
     margin: auto;
 }
-main>div{
+.articleList{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -16,12 +16,9 @@ main>div>article{
     justify-content: center;
 }
 
-ul>li{
-    display:none;
-}
-.cart:hover ul li{
-    display: block;
-}
 .price{
     padding-bottom: 10px;
+}
+li span{
+    padding: 20px;
 }
