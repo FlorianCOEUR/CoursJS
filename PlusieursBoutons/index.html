@@ -3,61 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestions de plusieurs bouttons</title>
-    <link rel="stylesheet" href="css/syle.css">
+    <title>e-Shop</title>
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
+    <header>
+        <div class="logo">e-Shop</div>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Produits</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
-        <div class="articleList">
-            <article>
-                <h3>Article 1</h3>
-                <span class="price"><strong>48</strong> €</span>
-                <button class="addCart" data-id="id1">Ajouter 1</button>
-            </article>
-            <article>
-                <h3>Article 2</h3>
-                <span class="price"><strong>38</strong> €</span>
-                <button class="addCart" data-id="id2">Ajouter 2</button>
-            </article>
-            <article>
-                <h3>Article 3</h3>
-                <span class="price"><strong>8</strong> €</span>
-                <button class="addCart" data-id="id3">Ajouter 3</button>
-            </article>
-            <article>
-                <h3>Article 4</h3>
-                <span class="price"><strong>18</strong> €</span>
-                <button class="addCart" data-id="id4">Ajouter 4</button>
-            </article>
-            <article>
-                <h3>Article 5</h3>
-                <span class="price"><strong>58</strong> €</span>
-                <button class="addCart" data-id="id5">Ajouter 5</button>
-            </article>
-        </div>
-        <div class="cart">
+        <section class="products">
+            <h1>Nos Produits</h1>
+            <div class="articleList">
+                <article>
+                    <h3>Article 1</h3>
+                    <span class="price"><strong>48</strong> €</span>
+                    <button class="addCart" data-id="id1">Ajouter au panier</button>
+                </article>
+                <article>
+                    <h3>Article 2</h3>
+                    <span class="price"><strong>38</strong> €</span>
+                    <button class="addCart" data-id="id2">Ajouter au panier</button>
+                </article>
+                <article>
+                    <h3>Article 3</h3>
+                    <span class="price"><strong>8</strong> €</span>
+                    <button class="addCart" data-id="id3">Ajouter au panier</button>
+                </article>
+            </div>
+        </section>
+        
+        <aside class="cart">
             <h2>Mon panier</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Nom de l'article</th>
-                        <th>Quantité</th>
+                        <th>Nom</th>
+                        <th>Qté</th>
                         <th>Prix</th>
                     </tr>
                 </thead>
                 <tbody>
-
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan="2">Total TTC</th>
-                        </th>
+                        <th colspan="2">Total</th>
                         <td><span class="total">0</span> €</td>
                     </tr>
                 </tfoot>
             </table>
-        </div>
+        </aside>
     </main>
+    
+    <footer>
+        <p>&copy; 2025 e-Shop. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>

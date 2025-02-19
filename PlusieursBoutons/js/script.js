@@ -5,9 +5,10 @@ document.querySelectorAll(".addCart").forEach(function(button){
         let here = false;
         let id=this.getAttribute("data-id");
         let price=this.closest("article").querySelector(".price strong").innerText;
-        console.log(price);
         lineCart.forEach(function(line){
             if(line.getAttribute("data-id")==id){
+                console.log(text);
+                console.log(line.querySelector(".nomArticle").innerText);
                 here=true;
                 let quantite = parseInt(line.querySelector(".quantite").innerText)+1;
                 line.querySelector(".quantite").innerText=quantite;
