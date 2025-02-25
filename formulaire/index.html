@@ -5,36 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Shop</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <script src="js/script2.js" defer></script>
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <form id="form" action="traitement.php" method="post"enctype="multipart/form-data">
         <div>
             <label for="prenom">Prénom* :</label>
-            <input type="text" name="firstname" id="prenom" >
+            <input type="text" name="firstname" id="prenom" required>
         </div>
         <div>
             <label for="nom">Nom de famille* :</label>
-            <input type="text" name="lastname" id="nom">
+            <input type="text" name="lastname" id="nom" required>
         </div>
         <div>
             <label for="email">Votre email* :</label>
-            <input type="text" name="courriel" id="email">
+            <input type="text" name="courriel" id="email" required>
         </div>
         <div>
             <label for="mdp">Votre mot de passe* :</label>
-            <input type="password" name="password" id="mdp">
+            <input type="password" name="password" id="mdp" required>
         </div>
         <div>
             <label for="mdpConf">Confirmer* :</label>
-            <input type="password" name="passwordConf" id="mdpConf">
+            <input type="password" name="passwordConf" id="mdpConf" required>
         </div>
         <div>
-            <input type="checkbox" name="cgv" id="cgv">
+            <input type="checkbox" name="cgv" id="cgv" required>
             <label for="cgv">Veuillez accepter les <a href="#">Conditions générales de ventes</a></label>
         </div>
-        <input type="submit" Value="OK">
+        <input type="submit" Value="OK" id="btn">
     </form>
 </body>
 </html>
