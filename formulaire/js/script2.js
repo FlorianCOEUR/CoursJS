@@ -2,7 +2,9 @@ function formSubmit(event){
     document.querySelectorAll(".error").forEach(function(errorDiv){
         errorDiv.classList.remove("error");
         if(errorDiv.querySelector("span")){
-            errorDiv.removeChild(errorDiv.querySelector("span"));
+            errorDiv.querySelectorAll("span").forEach((div)=>{
+                errorDiv.removeChild(div);
+            });
         }
     });
     let allValid=true;
@@ -30,6 +32,34 @@ function formSubmit(event){
     if(!checkBox.checked){
         checkBox.closest("div").classList.add("error");
     }
+    if(document.getElementById("mdp")!=''){
+        let mdp=document.getElementById("mdp").value;
+        let arrayRegEx=[
+            [new RegExp("^.{8,12}$","i"), "Doit contenir entre 8 et 12 caractères<br>"],
+            [new RegExp("(?=.*[a-z])"), "Doit contenir au moins une minuscule<br>"],
+            [new RegExp("(?=.*[A-Z])"), "Doit contenir au moins une MAJUSCULE<br>"],
+            [new RegExp("(?=.*[0-9])","i"), "Doit contenir au moins un chiffre<br>"],
+            [new RegExp("(?=.*[#!@$!%^+-\.])","i"), "Doit contenir au moins un caractère spécial<br>"]
+        ];
+        arrayRegEx.forEach((regEx)=>{
+            if(!regEx[0].test(mdp)){
+                text=regEx[1];
+                let spanError=document.createElement("span");
+                spanError.innerHTML=text;
+                let mdpDiv=document.getElementById("mdp").closest("div");
+                mdpDiv.classList.add("error");
+                mdpDiv.appendChild(spanError);
+            }
+        });
+        if(document.getElementById("mdp").value!=document.getElementById("mdpConf") && document.getElementById("mdpConf")!=''){
+            text=document.createTextNode("Les mots de passes sont différents!");
+            let spanError=document.createElement("span");
+            spanError.appendChild(text);
+            let mdpConfDiv=document.getElementById("mdpConf").closest("div");
+            mdpConfDiv.classList.add("error");
+            mdpConfDiv.appendChild(spanError);
+        }
+    }
     if(!allValid){
         event.preventDefault();
     }
@@ -41,14 +71,4 @@ document.getElementById("btn").addEventListener("click", formSubmit);
 function validerEmail(email) {
     const regex = new RegExp("^[a-zA-Z0-9.\-_\+]+@[a-zA-Z0-9.\-]+[.]{1}[a-zA-Z0-9]{2,}$","i");
     return regex.test(email);
-}
-
-function checkMDP(mdp){
-    let arrayRegEx=[
-        ["^.{8,12}$", false, "Doit contenir entre 8 et 12 caractères"],
-        ["^[a-z]$", false, "Doit contenir au moins une minuscule"],
-        ["^[A-Z]$", false, "Doit contenir au moins une MAJUSCULE"],
-        ["^[0-9]$", false, "Doit contenir au moins un chiffre"],
-        []
-    ]
 }
