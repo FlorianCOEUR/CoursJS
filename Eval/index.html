@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMon evaluation JS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Mon formulaire d'inscription</h1>
+            <form action="">
+                <div>
+                    <label for="name">Nom :</label>
+                    <div>
+                        <input type="text" name="name" id="name">
+                    </div>
+                </div>
+                <div>
+                    <label for="firstname">Prénom :</label>
+                    <div>
+                        <input type="text" name="firstname" id="firstname">
+                    </div>
+                </div>
+                <div>
+                    <label for="mail"> Mail* :</label>
+                    <div>
+                        <input type="mail" name="mail" id="mail">
+                        <i>jean.bon@example.fr</i>
+                    </div>
+                </div>
+                <div>
+                    <label for="tel">Tel : </label>
+                    <div>
+                        <input type="tel" name="tel" id="tel" value="+33">
+                        <i>+33 6 99 99 99 99</i>
+                    </div>
+                </div>
+                <div>
+                    <label for="pseudo">Pseudo* : </label>
+                    <div>
+                        <input type="text" name="pseudo" id="pseudo">
+                    </div>
+                </div>
+                <div>
+                    <label for="password">Mot de passe* : </label>
+                    <div>
+                        <input type="password" name="password" id="password">
+                        <a href="#">Info</a>
+                    </div>
+                </div>
+                <div>
+                    <label for="confirm">Confirmation* : </label>
+                    <div>
+                        <input type="password" name="confirm" id="confirm">
+                    </div>
+                </div>
+                <input type="submit" value="ok">
+            </form>
+        </div>
+        <div id="modal">
+            <div>
+                Le mot de passe doit contenir :
+                <ul>
+                    <li>1 minuscule</li>
+                    <li>1 MAJUSCULE</li>
+                    <li>1 chiffre</li>
+                    <li>1 Caractère spécial</li>
+                    <li>Au moins 8 caractères</li>
+                </ul>
+                <button>Fermer</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
